@@ -7,10 +7,10 @@ with sync_playwright() as p:
 
     page.goto("https://www.instagram.com/")
 
-    print("👉 INICIA SESIÓN MANUALMENTE")
-    input("Presiona ENTER después de iniciar sesión...")
+    print("👉 Please log in manually in the browser")
+    input("Press ENTER after logging in...")
 
     context.storage_state(path="cookies.json")
 
-    print("✅ Cookies guardadas")
+    print("✅ Cookies saved successfully")
     browser.close()
