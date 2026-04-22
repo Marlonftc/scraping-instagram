@@ -57,7 +57,7 @@ function App() {
 
       <div className="app-container">
         <UserSidebar users={users} selectedUser={selectedUser} onSelect={loadUserData} />
-        
+
         <main className="main-content">
           {loading ? (
             <div className="loading">⏳ Loading data...</div>
