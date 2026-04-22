@@ -1,4 +1,26 @@
+# Python
 venv/
 __pycache__/
 *.pyc
+
+# Cookies
 cookies.json
+
+# Generated data
+scraping_data.json
+scraping_data.xlsx
+*_data.json
+*_data.xlsx
+
+# Frontend public data
+frontend/public/scraping_data.json
+frontend/public/scraping_data.xlsx
+frontend/public/*_data.json
+frontend/public/*_data.xlsx
+
+# Frontend dependencies
+frontend/node_modules/
+frontend/dist/
+
+# Environment variables
+.env
