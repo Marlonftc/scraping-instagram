@@ -7,7 +7,7 @@ with sync_playwright() as p:
 
     page.goto("https://www.instagram.com/")
 
-    print("👉 Please log in manually in the browser")
+    print(" Please log in manually in the browser")
     input("Press ENTER after logging in...")
 
     context.storage_state(path="cookies.json")
