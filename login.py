@@ -12,5 +12,5 @@ with sync_playwright() as p:
 
     context.storage_state(path="cookies.json")
 
-    print("✅ Cookies saved successfully")
+    print(" Cookies saved successfully")
     browser.close()

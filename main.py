@@ -4,6 +4,8 @@ from pathlib import Path
 import re
 import shutil
 from urllib.parse import urljoin
+import argparse
+import sys
 
 import pandas as pd
 from playwright.sync_api import sync_playwright
@@ -281,6 +283,17 @@ def scrape_instagram(username):
 
 
 if __name__ == "__main__":
-    username = input("Enter Instagram username: ").strip()
-    if username:
-        scrape_instagram(username)
+    parser = argparse.ArgumentParser(description="Scrape an Instagram user's recent posts")
+    parser.add_argument("--username", "-u", help="Instagram username to scrape")
+    args = parser.parse_args()
+
+    if args.username:
+        scrape_instagram(args.username)
+    else:
+        # Backwards compatible interactive prompt
+        try:
+            username = input("Enter Instagram username: ").strip()
+        except Exception:
+            username = None
+        if username:
+            scrape_instagram(username)

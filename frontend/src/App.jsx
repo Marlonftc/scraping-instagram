@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ProfileSection from './components/ProfileSection';
 import PostsGrid from './components/PostsGrid';
 import UserSidebar from './components/UserSidebar';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -52,7 +53,8 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>📊 Instagram Scraper Dashboard</h1>
-        <p>Visual analysis of extracted data</p>
+        {/* <p>Visual analysis of extracted data</p> */}
+        <SearchBar onComplete={loadUsers} />
       </header>
 
       <div className="app-container">
@@ -60,7 +62,7 @@ function App() {
 
         <main className="main-content">
           {loading ? (
-            <div className="loading">⏳ Loading data...</div>
+            <div className="loading"> Loading data...</div>
           ) : data ? (
             <>
               <ProfileSection data={data} />
@@ -68,7 +70,7 @@ function App() {
             </>
           ) : (
             <div className="no-data">
-              <p>📭 No data to display</p>
+              <p> No data to display</p>
               <small>Run: python main.py</small>
             </div>
           )}
